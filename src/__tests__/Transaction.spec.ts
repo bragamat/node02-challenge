@@ -10,6 +10,8 @@ describe('Transaction', () => {
       value: 1200,
     });
 
+    // console.log(response.body);
+
     expect(isUuid(response.body.id)).toBe(true);
 
     expect(response.body).toMatchObject({
@@ -31,7 +33,6 @@ describe('Transaction', () => {
       type: 'outcome',
       value: 1500,
     });
-
     const response = await request(app).get('/transactions');
 
     expect(response.body.transactions).toEqual(
